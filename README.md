@@ -22,6 +22,83 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Project Design Architecture
+
+## Overview
+
+This document describes the architecture of my NestJS project, focusing on authentication, CRUD operations for tasks, and user profiles:
+
+1. **Authentication Routes**
+2. **CRUD Routes for Tasks**
+3. **Profile Route**
+4. **Repository Service Pattern**
+5. **Database and ORM (Prisma)**
+6. **Guards**
+
+## 1. Authentication Routes
+
+### Routes
+
+- **Login**: Handles user login.
+- **Register**: Handles user registration.
+
+### Data Transfer Objects (DTOs)
+
+- Use DTOs to validate data passing through these routes. Ensure data consistency and security.
+
+## 2. CRUD Routes for Tasks
+
+### Routes
+
+- Implement CRUD (Create, Read, Update, Delete) routes for tasks.
+
+### Components
+
+- **Controllers**: Handle HTTP requests for task-related endpoints.
+- **Services**: Contain business logic for task operations.
+
+## 3. Profile Route
+
+### Route
+
+- Implement a "get profile" route.
+
+### Components
+
+- **Controller**: Handles the profile endpoint.
+- **Service**: Retrieves user profiles.
+
+## 4. Repository Service Pattern
+
+### Overview
+
+- The repository service pattern abstracts data access logic from controllers and services.
+- Repositories act as intermediaries between the application and the database.
+
+### Example Repositories
+
+- `TaskRepository`: Manages task-related data.
+- `UserRepository`: Manages user-related data.
+
+## 5. Database and ORM (Prisma)
+
+### Database
+
+- I've chosen MySQL as my database.
+
+### Prisma (ORM)
+
+- Prisma simplifies database interactions.
+- Provides type-safe queries.
+- Similar to TypeORM.
+
+## 6. Guards
+
+### Purpose
+
+- Guards protect endpoints by enforcing access rules.
+- For example, an authentication guard ensures only authenticated users can access certain routes.
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
