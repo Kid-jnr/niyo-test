@@ -109,6 +109,11 @@ This document describes the architecture of my NestJS project, focusing on authe
 $ npm install
 ```
 
+```bash
+# Run database migration
+$ npx prisma migrate dev --name init
+```
+
 ## Running the app
 
 ```bash
